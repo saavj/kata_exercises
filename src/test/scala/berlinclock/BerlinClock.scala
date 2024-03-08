@@ -13,8 +13,8 @@ class BerlinClockTest extends FlatSpec with Matchers {
     *
     */
 
-  "BerlinClock" should "" in {
-    BerlinClock.play(3) shouldBe "fizz"
+  "Yellow lamp" should "blink on/off every two seconds" in {
+    BerlinClock.seconds(0) shouldBe ("Y")
   }
 
 
