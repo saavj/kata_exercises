@@ -1,7 +1,8 @@
-package fizzbuzz
+package berlinclock
 
-object FizzBuzz {
+object BerlinClock {
 
   def play(number: Int): String = "fizz"
-  
+
+
 }

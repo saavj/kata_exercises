@@ -1,6 +1,6 @@
-package fizzbuzz
+package bowlinggame
 
-object FizzBuzz {
+object BowlingGame {
 
   def play(number: Int): String = "fizz"
   
