@@ -1,8 +1,11 @@
 package fizzbuzz
 
-import org.scalatest.{FlatSpec, Matchers}
+import collection.mutable.Stack
+import org.scalatest._
+import flatspec._
+import matchers._
 
-class FizzBuzzTest extends FlatSpec with Matchers {
+class FizzBuzzTest extends AnyFlatSpec with should.Matchers {
 
   /**
     * Hi!
@@ -17,7 +20,7 @@ class FizzBuzzTest extends FlatSpec with Matchers {
     FizzBuzz.play(3) shouldBe "fizz"
 //    FizzBuzz.play(6) shouldBe "fizz"
   }
-//
+
 //  "FizzBuzz" should "return the word buzz if the number is divisible by 5" in {
 //    FizzBuzz.play(5) shouldBe "buzz"
 //    FizzBuzz.play(10) shouldBe "buzz"
@@ -28,9 +31,10 @@ class FizzBuzzTest extends FlatSpec with Matchers {
 //    FizzBuzz.play(30) shouldBe "fizzbuzz"
 //  }
 //
-//  "FizzBuzz" should "return the number if else" in {
-//    FizzBuzz.play(7) shouldBe "7"
-//    FizzBuzz.play(11) shouldBe "11"
+//  it should "return the same number if no other requirement is fulfilled" in {
+//    FizzBuzz.getResult(1) should be ("1")
+//    FizzBuzz.getResult(2) should be ("2")
+//    FizzBuzz.getResult(4) should be ("4")
 //  }
 
 }
