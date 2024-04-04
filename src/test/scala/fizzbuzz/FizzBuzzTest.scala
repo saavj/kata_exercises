@@ -17,24 +17,28 @@ class FizzBuzzTest extends AnyFlatSpec with should.Matchers {
     */
 
   "FizzBuzz" should "return the word fizz if the number is divisible by 3" in {
-    FizzBuzz.play(3) shouldBe "fizz"
-//    FizzBuzz.play(6) shouldBe "fizz"
+    val range = List(3, 6, 9, 12, 18, 21)
+    range.foreach { n =>
+      FizzBuzz.play(n) shouldBe "fizz"
+    }
   }
 
-//  "FizzBuzz" should "return the word buzz if the number is divisible by 5" in {
-//    FizzBuzz.play(5) shouldBe "buzz"
-//    FizzBuzz.play(10) shouldBe "buzz"
-//  }
-//
-//  "FizzBuzz" should "return the word fizzbuzz if the number is divisible by 15" in {
-//    FizzBuzz.play(15) shouldBe "fizzbuzz"
-//    FizzBuzz.play(30) shouldBe "fizzbuzz"
-//  }
-//
-//  it should "return the same number if no other requirement is fulfilled" in {
-//    FizzBuzz.getResult(1) should be ("1")
-//    FizzBuzz.getResult(2) should be ("2")
-//    FizzBuzz.getResult(4) should be ("4")
-//  }
+  "FizzBuzz" should "return the word buzz if the number is divisible by 5" in {
+    val range = List(5, 10, 20, 25, 35)
+    range.foreach { n =>
+      FizzBuzz.play(n) shouldBe "buzz"
+    }
+  }
+
+  "FizzBuzz" should "return the word fizzbuzz if the number is divisible by 15" in {
+    FizzBuzz.play(15) shouldBe "fizzbuzz"
+    FizzBuzz.play(30) shouldBe "fizzbuzz"
+  }
+
+  it should "return the same number if no other requirement is fulfilled" in {
+    FizzBuzz.play(1) should be ("1")
+    FizzBuzz.play(2) should be ("2")
+    FizzBuzz.play(4) should be ("4")
+  }
 
 }
