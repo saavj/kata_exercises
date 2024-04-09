@@ -29,31 +29,43 @@ class BerlinClockTest extends AnyFlatSpec with should.Matchers {
     BerlinClock.topHours(0) should be ("OOOO")
     BerlinClock.topHours(5) should be ("ROOO")
     BerlinClock.topHours(13) should be ("RROO")
-//    BerlinClock.topHours(23) should be ("RRRR")
-//    BerlinClock.topHours(24) should be ("RRRR")
+    BerlinClock.topHours(23) should be ("RRRR")
+    BerlinClock.topHours(24) should be ("RRRR")
   }
-//
-//  "Bottom hours" should "have 4 lamps" in {
-//    BerlinClock.bottomHours(5).length should be (4)
-//  }
-//
-//  it should "light a red lamp for every hour left from top hours" in {
-//    BerlinClock.bottomHours(0) should be ("OOOO")
-//    BerlinClock.bottomHours(13) should be ("RRRO")
-//    BerlinClock.bottomHours(23) should be ("RRRO")
-//    BerlinClock.bottomHours(24) should be ("RRRR")
-//  }
-//
-//  "Top minutes" should "have 11 lamps" in {
-//    BerlinClock.topMinutes(34).length should be (11)
-//  }
-//
-//  it should "have 3rd, 6th and 9th lamps in red to indicate first quarter, half and last quarter" in {
-//    val minutes32 = BerlinClock.topMinutes(32)
-//    minutes32(2) should be ('R')
-//    minutes32(5) should be ('R')
-//    minutes32(8) should be ('O')
-//  }
+
+  "Bottom hours" should "have 4 lamps" in {
+    BerlinClock.bottomHours(5).length should be (4)
+  }
+
+  it should "light a red lamp for every hour left from top hours" in {
+    BerlinClock.bottomHours(0) should be ("OOOO")
+    BerlinClock.bottomHours(13) should be ("RRRO")
+    BerlinClock.bottomHours(23) should be ("RRRO")
+    BerlinClock.bottomHours(24) should be ("RRRR")
+  }
+
+  "Top minutes" should "have 11 lamps" in {
+    BerlinClock.topMinutes(34).length should be (11)
+  }
+
+  it should "have 3rd, 6th and 9th lamps in red to indicate first quarter, half and last quarter" in {
+    val minutes10 = BerlinClock.topMinutes(10)
+    minutes10(2) should be ('O')
+    minutes10(5) should be ('O')
+    minutes10(8) should be ('O')
+    val minutes16 = BerlinClock.topMinutes(16)
+    minutes16(2) should be ('R')
+    minutes16(5) should be ('O')
+    minutes16(8) should be ('O')
+    val minutes32 = BerlinClock.topMinutes(32)
+    minutes32(2) should be ('R')
+    minutes32(5) should be ('R')
+    minutes32(8) should be ('O')
+    val minutes47 = BerlinClock.topMinutes(47)
+    minutes47(2) should be ('R')
+    minutes47(5) should be ('R')
+    minutes47(8) should be ('R')
+  }
 //
 //  it should "light a yellow lamp for every 5 minutes unless it's first quarter, half or last quarter" in {
 //    BerlinClock.topMinutes(0) should be ("OOOOOOOOOOO")
