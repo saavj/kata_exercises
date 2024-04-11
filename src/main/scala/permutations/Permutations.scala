@@ -2,7 +2,7 @@ package permutations
 
 object Permutations {
 
-  def apply(s: String): Array[String] = s.permutations.toArray
+  def apply(s: String): Array[String] = ???
 
 }
 
