@@ -47,9 +47,9 @@ class BerlinClockTest extends AnyFlatSpec with should.Matchers {
     BerlinClock.bottomHours(30) should be ("Not a valid time")
   }
 
-//  "Top minutes" should "have 11 lamps" in {
-//    BerlinClock.topMinutes(34).length should be (11)
-//  }
+  "Top minutes" should "have 11 lamps" in {
+    BerlinClock.topMinutes(34).length should be (11)
+  }
 //
 //  it should "have 3rd, 6th and 9th lamps in red to indicate first quarter, half and last quarter" in {
 //    val minutes32 = BerlinClock.topMinutes(32)

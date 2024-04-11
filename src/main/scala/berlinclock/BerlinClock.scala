@@ -6,7 +6,7 @@ object BerlinClock {
 
   def bottomMinutes(i: Int): String = ???
 
-  def topMinutes(i: Int): String = ???
+  def topMinutes(i: Int): String = "OOOOOOOOOOO"
 
   def bottomHours(i: Int): String = {
     if (i > 24) "Not a valid time"
