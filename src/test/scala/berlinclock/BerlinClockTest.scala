@@ -34,9 +34,9 @@ class BerlinClockTest extends AnyFlatSpec with should.Matchers {
     BerlinClock.topHours(24) should be ("RRRR")
   }
 
-//  "Bottom hours" should "have 4 lamps" in {
-//    BerlinClock.bottomHours(5).length should be (4)
-//  }
+  "Bottom hours" should "have 4 lamps" in {
+    BerlinClock.bottomHours(5).length should be (4)
+  }
 //
 //  it should "light a red lamp for every hour left from top hours" in {
 //    BerlinClock.bottomHours(0) should be ("OOOO")
