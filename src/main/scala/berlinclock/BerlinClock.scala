@@ -10,11 +10,14 @@ object BerlinClock {
 
   def bottomHours(i: Int): String = ???
 
-  def topHours(i: Int): String =
+  def topHours(i: Int): String = {
     if (i >= 0 && i <=4) "OOOO"
     else if (i >= 5 && i <=9) "ROOO"
+    else if (i >= 10 && i <=14) "RROO"
+    else if (i >= 15 && i <=19) "RRRO"
     else if (i >= 20 && i <= 24) "RRRR"
-    else "RROO"
+    else "Not a valid time"
+  }
 
   def seconds(x: Int): String = {
     if (x % 2 == 0) "Y" else "O"
