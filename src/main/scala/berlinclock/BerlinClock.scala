@@ -9,12 +9,16 @@ object BerlinClock {
   def topMinutes(i: Int): String = ???
 
   def bottomHours(i: Int): String = {
-    if (i == 0) "OOOO"
-    else if (i % 5 == 1) "ROOO"
-    else if (i % 5 == 2) "RROO"
-    else if (i % 5 == 3) "RRRO"
-    else if (i % 5 == 4) "RRRR"
-    else "Not a valid time"
+    if (i > 24) "Not a valid time"
+    else
+      i % 5 match {
+      case 0 => "OOOO"
+      case 1 => "ROOO"
+      case 2 => "RROO"
+      case 3 => "RRRO"
+      case 4 => "RRRR"
+      case _ => "???"
+    }
   }
 
   def topHours(i: Int): String = {
