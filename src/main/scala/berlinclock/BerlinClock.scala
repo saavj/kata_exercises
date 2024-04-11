@@ -8,8 +8,10 @@ object BerlinClock {
 
   def topMinutes(i: Int): String = ???
 
-  def bottomHours(i: Int): String =
-    "okay"
+  def bottomHours(i: Int): String = {
+    if (i == 0) "OOOO"
+    else "okay"
+  }
 
   def topHours(i: Int): String = {
     if (i >= 0 && i <=4) "OOOO"
