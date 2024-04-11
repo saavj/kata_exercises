@@ -13,6 +13,7 @@ object BerlinClock {
   def topHours(i: Int): String =
     if (i >= 0 && i <=4) "OOOO"
     else if (i >= 5 && i <=9) "ROOO"
+    else if (i >= 20 && i <= 24) "RRRR"
     else "RROO"
 
   def seconds(x: Int): String = {
