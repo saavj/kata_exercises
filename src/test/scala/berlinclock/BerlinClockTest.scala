@@ -77,5 +77,9 @@ class BerlinClockTest extends AnyFlatSpec with should.Matchers {
    val berlinTime = BerlinClock.convertToBerlinTime("16:37:16")
    val expected = Array("Y", "RRRO", "ROOO", "YYRYYRYOOOO", "YYOO")
    berlinTime should equal (expected)
+
+      //  val badBerlinTime = BerlinClock.convertToBerlinTime("01:01:01:01")
+
+    //ToDo Handle milliseconds and bad timestamps; Errors and typesafety (intOption);
  }
 }
