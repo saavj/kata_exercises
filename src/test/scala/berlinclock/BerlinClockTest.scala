@@ -57,16 +57,16 @@ class BerlinClockTest extends AnyFlatSpec with should.Matchers {
     minutes32(5) should be ('R')
     minutes32(8) should be ('O')
   }
-//
-//  it should "light a yellow lamp for every 5 minutes unless it's first quarter, half or last quarter" in {
-//    BerlinClock.topMinutes(0) should be ("OOOOOOOOOOO")
-//    BerlinClock.topMinutes(17) should be ("YYROOOOOOOO")
-//    BerlinClock.topMinutes(59) should be ("YYRYYRYYRYY")
-//  }
-//
-//  "Bottom minutes" should "have 4 lamps" in {
-//    BerlinClock.bottomMinutes(0).length should be (4)
-//  }
+
+  it should "light a yellow lamp for every 5 minutes unless it's first quarter, half or last quarter" in {
+    BerlinClock.topMinutes(0) should be ("OOOOOOOOOOO")
+    BerlinClock.topMinutes(17) should be ("YYROOOOOOOO")
+    BerlinClock.topMinutes(59) should be ("YYRYYRYYRYY")
+  }
+
+  "Bottom minutes" should "have 4 lamps" in {
+    BerlinClock.bottomMinutes(0).length should be (4)
+  }
 //
 //  it should "light a yellow lamp for every minute left from top minutes" in {
 //    BerlinClock.bottomMinutes(0) should be ("OOOO")

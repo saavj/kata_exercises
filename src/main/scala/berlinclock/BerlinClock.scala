@@ -4,18 +4,26 @@ object BerlinClock {
 
   def convertToBerlinTime(str: String): String = ???
 
-  def bottomMinutes(i: Int): String = ???
+  def bottomMinutes(i: Int): String =
+    "OOOO"
+
 
   def topMinutes(i: Int): String = {
-    if (i >= 0 && i < 15) "OOOOOOOOOOOO"
-    else if (i == 34) "OOOOOOOOOOO"
-    else "OOROOROOOOOO"
+
+    def helper(threshold: Int, mins: Int, colour: String) =
+      if (mins < threshold) "O" else colour
+
+    val rangeOfThresholds = 5.to(59, 5)
+
+    rangeOfThresholds.map {
+      case n if n % 15 == 0 => helper(n, i, "R")
+      case n => helper(n, i, "Y")
+    }.mkString("")
   }
 
   def bottomHours(i: Int): String = {
     if (i > 24) "Not a valid time"
-    else
-      i % 5 match {
+    else i % 5 match {
       case 0 => "OOOO"
       case 1 => "ROOO"
       case 2 => "RROO"
