@@ -3,15 +3,13 @@ package berlinclock
 object BerlinClock {
   def convertToBerlinTime(timestamp: String): Array[String] = {
     val indexArray: Array[String] = timestamp.split(':')
+
+    // ToDo Flatmap in the indexArray, pattern match against (element, index) ???
+    // val 
     // hours, minutes, seconds
       val hours  = Array(topHours(indexArray(0).toInt),bottomHours(indexArray(0).toInt))
       val minutes  = Array(topMinutes(indexArray(1).toInt),bottomMinutes(indexArray(1).toInt))
       val secs = Array(seconds(indexArray(2).toInt))
-
-        //Array(topHours(hours.toInt),bottomHours(hours.toInt))
-//      case (minutes,1) => Array(topMinutes(minutes.toInt),bottomMinutes(minutes.toInt))
-//      case (secs,2) => Array(BerlinClock.seconds(secs.toInt))
-
 
       secs ++ hours ++ minutes
     }
