@@ -5,8 +5,7 @@ object BerlinClock {
     val indexArray: Array[String] = timestamp.split(':')
 
     // ToDo Flatmap in the indexArray, pattern match against (element, index) ???
-    // val 
-    // hours, minutes, seconds
+
       val hours  = Array(topHours(indexArray(0).toInt),bottomHours(indexArray(0).toInt))
       val minutes  = Array(topMinutes(indexArray(1).toInt),bottomMinutes(indexArray(1).toInt))
       val secs = Array(seconds(indexArray(2).toInt))
