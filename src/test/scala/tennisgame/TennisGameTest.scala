@@ -10,9 +10,14 @@ class TennisGameTest  extends AnyFlatSpec with should.Matchers {
     val player1 = Player("Shiva")
     val player2 = Player("Adonay")
 
-    val game = new TennisGame()
+    val players = Map(player1 -> Love, player2 -> Love)
 
-    game.winBall().score should be Score(0, 1)
+    val game = new TennisGame(players)
+
+    val t = game.winRound(player1)
+    t.game.find() should be(Fifteen)
+
+    //game.winRound(player1) should be(Thirty)
 
   }
 
