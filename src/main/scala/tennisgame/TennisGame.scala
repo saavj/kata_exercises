@@ -13,7 +13,7 @@ case object Fifteen extends Score{
 case object Thirty extends Score {
   val value = 2
 }
-case object FortyFive extends Score{
+case object Forty extends Score{
   val value = 3
 }
 
@@ -27,34 +27,33 @@ case object Win extends Score{
 
 case class Player(name: String, noOfGames:Int=0)
 
-//class TennisSet(val set: Map[Player, noOfGames])
 
 class TennisGame(val game: Map[Player, Score]){
 
   val score: (Score,Score) = (game.values.toList(0), game.values.toList(1))
 
   def winBall(player: Player): TennisGame = {
-    // check whether both players have score fortyFive
+    // check whether both players have score forty
     val currentScore = game.getOrElse(player,Love)
 
-    isBothFortyFive match
+//    isForty match
 
 
     val newScore = nextScoreNormal(currentScore,player)
     val updatedGame  = game + (player-> newScore._1)
 
+    val newTennisGame = new TennisGame(updatedGame)
+    println(s"the current score is ${newTennisGame.score}")
+    newTennisGame
 
-    new TennisGame(updatedGame)
   }
   def nextScoreNormal(score:Score, player:Player): (Score,Player) =
     score match {
       case Love => (Fifteen,player)
       case Fifteen => (Thirty,player)
-      case Thirty => (FortyFive,player)
-      case FortyFive => (Win, player)
+      case Thirty => (Forty,player)
+      case Forty => (Win, player)
     }
-
-  def isWin: Boolean
 
 
   //

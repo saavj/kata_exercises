@@ -66,7 +66,20 @@ class TennisGameTest  extends AnyFlatSpec with should.Matchers {
   }
 
   "Game" should "be won by the first player to have won at least four points in total and with at least two points more than the opponent" in {
+      //Arrange
+      val player1 = Player("Adonay")
+      val player2 = Player("Shiva")
+      val tennisGame = TennisGame(player1,player2)
+      val simulateGame = tennisGame
+        .winBall(player1)
+        .winBall(player2)
+        .winBall(player1)
+        .winBall(player2)
+    
+      //Act
+      val result = (simulateGame.score)._2
 
+      //Assert
+      result should be(Win)
   }
-
 }
