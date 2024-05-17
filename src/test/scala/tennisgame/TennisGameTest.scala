@@ -6,20 +6,23 @@ import org.scalatest.matchers.should
 class TennisGameTest  extends AnyFlatSpec with should.Matchers {
 
   "Points" should "be accrued for each player in a Game" in {
+    val player1 = Player1("Ben", 0)
+    val player2 = Player2("Archie", 0)
 
-    // set up players
-    val player1 = Player("Ben", 0)
-    val player2 = Player("Archie", 0)
+    val game = TennisGame(player1, player2)
 
-    // plays 1 round
-    player1.incrementScore.score should be(15)
-
-    // play second round
-    player1.incrementScore.incrementScore.score should be(30)
-
+    val rally1 = game.winPoint(player1)
+    rally1.player1.score should be(15)
+    rally1.player2.score should be(0)
   }
 
   "Love" should "be description for score 0" in {
+    val player1 = Player1("Ben", 0)
+    val player2 = Player2("Archie", 0)
+
+    val game = TennisGame(player1, player2)
+
+    game.announceScore should be("Love all")
 
   }
 
