@@ -42,8 +42,20 @@ class TennisGameTest  extends AnyFlatSpec with should.Matchers {
     updatedGame.game should be(Map(Player("Nadal") -> Fifteen, Player("Simon") -> Love))
   }
 
-  "given an existing game where player1 is FortyFive, player 2 is not FortyFive " +
-    "when player1 winBall " should "player1"
+  "given an existing game where player1 is Forty, player 2 is Advantage " +
+    "when player1 wons " should "return a tennis game (Forty, Forty)" in {
+
+    // Arrange
+    val player1 = Player("Adam")
+    val player2  = Player("Bob")
+    val initialGame = new TennisGame(Map(player1-> Forty, player2 -> Advantage))
+
+    // Act
+    val updatedGame= initialGame.winBall(player1)
+
+
+    updatedGame.game should be (Map(player1->Forty, player2->Forty))
+  }
 
 
 
